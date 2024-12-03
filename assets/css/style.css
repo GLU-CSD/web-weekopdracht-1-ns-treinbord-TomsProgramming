@@ -78,12 +78,91 @@ body {
 }
 
 #middle #board {
+    position: absolute;
+    
     width: 480px;
     height: 245px;
 
     margin-top: -5px;
 
+    color: rgb(0, 0, 106);
+    
     background-color: #fff;
+}
+
+#middle #board img {
+    height: 30px;
+    margin-left: 400px;
+    margin-top: 7.5px;
+}
+
+#middle #board #categoryName {
+    font-size: 40px;
+    font-weight: bold;
+
+    letter-spacing: -1px;
+    
+    margin-top: -40px;
+    margin-left: 246px
+}
+
+#middle #board #departureMinutes{
+    font-size: 27.5px;
+    font-weight: bold;
+
+    margin-top: -87.8px;
+    margin-left: 12px;
+
+    letter-spacing: -1px;
+}
+
+#middle #board #departureMinutes span {
+    font-size: 40px;
+}
+
+#middle #board #direction {
+    font-weight: bold;
+    font-size: 40px;
+
+    margin-top: -30px;
+    margin-left: 13px;
+
+    letter-spacing: -0.5px;
+}
+
+#middle #board #routeStations {
+    font-weight: bold;
+    font-size: 25px;
+
+    margin-top: -35px;
+    margin-left: 15px;
+
+    line-height: 1.4;
+    
+    letter-spacing: -0.5px;
+}
+
+#middle #bottom {
+    position: absolute;
+    
+    width: 480px;
+    height: 25px;
+
+    margin-top: 240px;
+
+    color: rgb(255, 255, 255);
+
+    border: 2px solid #000;
+    
+    background-color: rgb(0, 0, 76);
+}
+
+#middle #bottom p {
+    font-weight: bold;
+    font-size: 18.5px;
+
+    margin-top: 2px;
+    margin-left: 12.5px
 }
 
 #right{
@@ -145,4 +224,3 @@ body {
 
     background-color: rgb(0, 0, 106);
 }
-
