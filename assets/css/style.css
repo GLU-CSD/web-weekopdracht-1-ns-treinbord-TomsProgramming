@@ -165,6 +165,23 @@ body {
     margin-left: 12.5px
 }
 
+#middle #composition {
+    position: relative;
+
+    margin: 0 auto;
+}
+
+#middle #composition #start {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    margin-left: 125px;
+    margin-top: 64px;
+    clip-path: polygon(50% 1%, 75% 8%, 60% 24%, 35% 50%, 20% 65%
+               , 12.5% 75%, 7.5% 75%, 15% 50%, 20% 40%, 38% 10%);
+    background-color: rgb(0, 0, 106);
+}
+
 #right{
     width:128px;
     height: 335px;
@@ -191,6 +208,7 @@ body {
     margin-top: 5px;
     margin-left: 25px;
 }
+
 
 #right #track #number {
     font-size: 67.5px;

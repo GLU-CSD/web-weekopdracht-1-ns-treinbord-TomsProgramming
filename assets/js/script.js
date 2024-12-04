@@ -4,7 +4,7 @@ window.onload = function() {
     clockInitialize();
     fetchBoardData();
 
-    setInterval(fetchBoardData, 15000);
+    setInterval(fetchBoardData, 5000);
     setInterval(clockInitialize, 1000 / clockFps);
 };
 
@@ -45,16 +45,15 @@ async function fetchBoardData() {
             return;
         }
 
-        //const departuresFromSpoor = data.payload.departures.filter(
-        //    (departure) => departure.plannedTrack === spoor || departure.actualTrack === spoor
-        //);
+        const departuresFromSpoor = data.payload.departures.filter(
+            (departure) => departure.plannedTrack === spoor || departure.actualTrack === spoor
+        );
 
-        //const nextTwoTrains = departuresFromSpoor.slice(0, 2);
-        const nextTwoTrains = data.payload.departures.slice(0, 2);
+        const nextTwoTrains = departuresFromSpoor.slice(0, 2);
 
         if(nextTwoTrains[0]){
             var departureTime = new Date(nextTwoTrains[0].plannedDateTime);
-            var departureMinutes = Math.floor((departureTime - new Date()) / 60000);
+            var departureMinutes = Math.max(0, Math.ceil((departureTime - new Date()) / 60000));
 
             var routeStationsString = '';
             nextTwoTrains[0].routeStations.forEach((station, index) => {
@@ -80,7 +79,7 @@ async function fetchBoardData() {
         if(nextTwoTrains[1]){
             var departureTime = new Date(nextTwoTrains[1].plannedDateTime);
 
-            document.querySelector('#middle #bottom p span').innerHTML = `${departureTime.getHours()}:${departureTime.getMinutes()} ${nextTwoTrains[1].trainCategory} ${nextTwoTrains[1].direction}`;
+            document.querySelector('#middle #bottom p span').innerHTML = `${departureTime.getHours().toString().padStart(2, '0')}:${departureTime.getMinutes().toString().padStart(2, '0')} ${nextTwoTrains[1].trainCategory} ${nextTwoTrains[1].direction}`;
         }else{
             document.querySelector('#middle #bottom p').style.display = 'none';
         }
@@ -90,6 +89,4 @@ async function fetchBoardData() {
         console.error('Er ging iets fout:', error.message);
     }
 };
-
-fetchBoardData();
 
