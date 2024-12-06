@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekopdracht - NS-Treinbord</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=<?php echo filemtime('assets/css/style.css') ?>">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -23,19 +23,9 @@
                 <p id="departureMinutes"><span>0</span>Laden</p>
                 <p id="direction">Laden</p>
                 <p id="routeStations">Via: <span>Laden</span></p>
-
-                <div id="composition">
-                    <div id="start"></div>
-                    <span>P</span>
-                    <span>O</span>
-                    <span>N</span>
-                    <span>M</span>
-                    <span>L</span>
-                    <span>K</span>
-                </div>
             </div>
             <div id="bottom">
-                <p>Hierna/next: <span>Laden</span></p>
+                <p></p>
             </div>
         </div>
         <div id="right">
@@ -49,5 +39,5 @@
     </div>
 </body>
 
-<script src="assets/js/script.js"></script>
+<script src="assets/js/script.js?v=<?php echo filemtime('assets/js/script.js') ?>"></script>
 </html>
